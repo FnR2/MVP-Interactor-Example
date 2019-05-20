@@ -8,11 +8,13 @@ import demo.bbedir.rahatlaticisesler.SoundObject;
 /**
  * CREATED BY bbedir on 2019-05-17.
  */
-public class FavoritePresenterImpl extends BasePresenterImpl<FavoriteView, FavoriteInteractorImpl> implements FavoritePresenter, FavoriteInteractor.Callback {
+public class FavoritePresenterImpl extends BasePresenterImpl<FavoriteView> implements FavoritePresenter, FavoriteInteractor.Callback {
 
+    FavoriteInteractor mInteractor;
 
-    public FavoritePresenterImpl(FavoriteView view, FavoriteInteractorImpl interactor) {
-        super(view, interactor);
+    public FavoritePresenterImpl(FavoriteView view) {
+        super(view);
+        mInteractor = new FavoriteInteractorImpl(this);
 
     }
 
